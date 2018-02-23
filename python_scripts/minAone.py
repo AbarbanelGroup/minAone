@@ -467,6 +467,7 @@ f.write('\
       ptr = strtok(0,",");\n\
       counter++;\n\
     }\n\
+    delete [] tmp;\n\
   }\n\
   for (Index i=0;i<nY;i++){\n\
     Rf0[i]=bounds[i][2];\n\
@@ -761,6 +762,8 @@ f.write('\
     }\n\
     for(Index i=0;i<2*Time+1;i++) delete [] init[i];\n\
     delete [] init;\n\
+    for(Index i=0;i<skip;i++) delete [] skipinit[i];\n\
+    delete [] skipinit;\n\
   }\n\
   else{\n\
     for(Index i=0;i<Ntotal-nP;i++){\n\
